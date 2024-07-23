@@ -5,7 +5,8 @@ const initialState = [
      lastName: ' ',
      email: '',
      country_citizenship: '',
-     url: ''
+     url: '',
+     application_status:''
    }
    ]
 
@@ -15,11 +16,11 @@ const initialState = [
         reducers: {
             addClient: (state) => {
               const  {  firstName, lastName,  email, country_citizenship, url } = action.PayloadAction
-              state.push({firstName, lastName,  email, country_citizenship, url})
+              state.push({firstName, lastName,  email, country_citizenship, url, appllication_status})
             },
             updateClient: (state) => {
                 const  {  firstName, lastName,  email, country_citizenship, url } = action.PayloadAction
-              state.push({firstName, lastName,  email, country_citizenship, url})
+              state.push({firstName, lastName,  email, country_citizenship, url, appllication_status})
             }
             
         }         

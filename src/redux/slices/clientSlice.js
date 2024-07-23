@@ -10,7 +10,7 @@ const initialState = [
    ]
 
    const clientSlice = createSlice({
-        visaData: 'inputData',
+        name: 'client',
         initialState,
         reducers: {
             addClient: (state) => {

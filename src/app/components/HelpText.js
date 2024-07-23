@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import {Button, Card, CardContent, Stack, Typography } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ConfirmPage from '../confirm/page';
+// import ConfirmPage from '../confirm/page';
 
 const HelpText = () => {
   return (

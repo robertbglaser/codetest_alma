@@ -1,6 +1,6 @@
 'use client'
-import React,{use, useEffect, useState} from 'react'
-import { FormControl, TextField, MenuItem, Select } from '@mui/material';
+import React,{ useEffect, useState} from 'react'
+import { FormControl, InputLabel, TextField, MenuItem, Select } from '@mui/material';
 
 
 
@@ -10,6 +10,8 @@ const VitalInfo = () => {
  const [lastName, setLastName] = useState([])
  const [email,  setEmail] = useState([])
  const [url,  setUrl] = useState([])
+ const [country, setCountry] = useState('Citizenship Country')
+ const [application_status, setApplicationStatus] = useState('Pending')
 
  const [initialSelectValue] = useState('Country of Citizenship')
 
@@ -26,10 +28,12 @@ const VitalInfo = () => {
 
     },[])
     
+    const handleChange = (e) =>{
+        setCountry(e.target.value)
 
+        console.log("inside handlechange", e.target.value)
 
-    //  console.log(countriesList)
-    // setCountries(Object.entries(countriesList))
+    }
   return (
     <div>
         <br/>
@@ -40,10 +44,12 @@ const VitalInfo = () => {
   
   <TextField   variant="outlined" type='text' placeholder='First Name' value={firstName}onChange={(e)=>setFirstName(e.target.value)} />
   <TextField   variant="outlined"placeholder='Last Name' type='text' value={lastName}onChange={(e)=>setLastName(e.target.value)}/>
-  <TextField   variant='outlined' type='email' placeholder='Email' value={email}onChange={(e)=>setEmail(e.target.value)}/>
-  <Select variant='outlined'
-          defaultValue={initialSelectValue}
-          placeholder={initialSelectValue}
+  <TextField   variant='outlined' type='email' placeholder='Email' value={email} onChange={(e)=>setEmail(e.target.value)}/>
+   
+  <Select
+          value={country}
+          label= {country}
+          onChange={handleChange}
           >
    
     {countriesList.map((country, index) => {

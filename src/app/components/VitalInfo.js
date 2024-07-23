@@ -1,11 +1,16 @@
 'use client'
-import React,{useEffect, useState} from 'react'
+import React,{use, useEffect, useState} from 'react'
 import { FormControl, TextField, MenuItem, Select } from '@mui/material';
 
 
 
 const VitalInfo = () => {
  const [countriesList, setCountriesList] = useState([])
+ const [firstName, setFirstName] = useState([])
+ const [lastName, setLastName] = useState([])
+ const [email,  setEmail] = useState([])
+ const [url,  setUrl] = useState([])
+
  const [initialSelectValue] = useState('Country of Citizenship')
 
     useEffect(()=>{
@@ -33,9 +38,9 @@ const VitalInfo = () => {
     <br/>
     <FormControl>
   
-  <TextField   variant="outlined" type='text' placeholder='First Name' />
-  <TextField   variant="outlined"placeholder='Last Name' type='text'/>
-  <TextField   variant='outlined' type='email' placeholder='Email'/>
+  <TextField   variant="outlined" type='text' placeholder='First Name' value={firstName}onChange={(e)=>setFirstName(e.target.value)} />
+  <TextField   variant="outlined"placeholder='Last Name' type='text' value={lastName}onChange={(e)=>setLastName(e.target.value)}/>
+  <TextField   variant='outlined' type='email' placeholder='Email' value={email}onChange={(e)=>setEmail(e.target.value)}/>
   <Select variant='outlined'
           defaultValue={initialSelectValue}
           placeholder={initialSelectValue}
@@ -47,7 +52,7 @@ const VitalInfo = () => {
     )
     })}
   </Select>
-  <TextField   variant='outlined' type='url' placeholder='LinkedIn/Personal Website URL'/>
+  <TextField   variant='outlined' type='url' placeholder='LinkedIn/Personal Website URL' value={url}onChange={(e)=>setUrl(e.target.value)}/>
 </FormControl>
 
     </div>

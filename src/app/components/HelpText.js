@@ -1,6 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import {Button, Card, CardContent, Stack, Typography } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ConfirmPage from '../confirm/page';
 
 const HelpText = () => {
   return (
@@ -24,11 +26,13 @@ const HelpText = () => {
                
         
     </Card>
+
+    <Link href={"/confirm"} passHref> 
     <Stack direction="row" spacing={2}>
     <Button variant="contained" style={{ color: 'white', backgroundColor:"black" }}>Submit</Button>
 
     </Stack>
-    
+    </Link>
     </div>
   )
 }

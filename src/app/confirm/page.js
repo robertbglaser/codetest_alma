@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link'
-import {Button, Card, CardContent, Stack, Typography } from '@mui/material';
+import {Button, Stack, Typography } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const ConfirmPage = () => {
+
+  
   return (
     <div>
        <FavoriteIcon style={{ color: 'violet' }} /> 
